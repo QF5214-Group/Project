@@ -1,0 +1,56 @@
+use bitcoin_wxc;
+
+create table news (
+  news_id int primary key,
+  date date,
+  news_title varchar(100) not null default '',
+  news_url varchar(300) not null default '',
+  news_domain varchar(100) not null default '',
+  news_language varchar(100) not null default '',
+  news_country varchar(100) not null default '',
+  news_title_emotion decimal(7,6),
+  news_title_subjectivity decimal(7,6),
+  news_important boolean not null default false
+);
+
+
+create table market (
+  date date primary key,
+  btc_price decimal(9,4),
+  btc_volume decimal(16,4),
+  eth_price decimal(9,4),
+  eth_volume decimal(16,4),
+  cpi decimal(9,3),
+  nonfarm decimal(16,4),
+  population decimal(16,4),
+  nofarm_ratio decimal(5,4),
+  fed_rate decimal(5,4),
+  sofr decimal(5,4)
+);
+
+
+create table talk_comments (
+  talk_comment_id int primary key,
+  date date,
+  talk_subject varchar(100),
+  talk_user varchar(100),
+  talk_comment text not null,
+  talk_comment_sentiment decimal(7,6)
+);
+
+
+create table talk_subjects (
+  talk_subject varchar(100) primary key,
+  date date,
+  talk_subject_replies int,
+  talk_subject_views int,
+  talk_subject_emotion decimal(7,6),
+  talk_subject_subjectivity decimal(7,6)
+);
+
+
+create table talk_users (
+  talk_user varchar(100) primary key,
+  talk_user_activity int,
+  talk_user_merit int
+);
