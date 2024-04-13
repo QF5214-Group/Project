@@ -1,0 +1,3 @@
+how to creat new database: 1 open cloud sql   2 creat a new database
+
+how to creat new table:      3 open cloud sql studio   4 select aim database    5 create the table with variable names and stypes
