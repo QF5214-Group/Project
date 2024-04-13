@@ -30,7 +30,7 @@ def sentiment_subjectivity(text):
 sentiment_polarity_udf = udf(sentiment_polarity, FloatType())
 sentiment_subjectivity_udf = udf(sentiment_subjectivity, FloatType())
 
-df = spark.read.csv('C:/Users/666/Desktop/news_csv/news_rawdata.csv', header=True, inferSchema=True)
+df = spark.read.csv('C:/Users/666/Desktop/news_rawdata.csv', header=True, inferSchema=True)
 
 # 应用UDF进行情感分析
 df = df.withColumn("polarity", sentiment_polarity_udf(col("title")))
