@@ -1,0 +1,5 @@
+how to input data into table: 
+1 output aim data into a csv file(no head!)                       
+2 upload the csv from local file to Google cloud storage
+3 upload the data Google cloud storage to aim table
+4 fulfill the specific details to input
