@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime
 
-def get_fedfunds_data(date='', api_key='051f69ecb49f2cecf43a9ad162820cd1'):
+def get_sofr_data(date='', api_key='051f69ecb49f2cecf43a9ad162820cd1'):
     # 检查日期输入，如果为空则使用当前日期
     if not date:
         date = datetime.now().strftime("%Y-%m-%d")
@@ -9,7 +9,7 @@ def get_fedfunds_data(date='', api_key='051f69ecb49f2cecf43a9ad162820cd1'):
     # 构建请求URL
     url = "https://api.stlouisfed.org/fred/series/observations"
     params = {
-        "series_id": "FEDFUNDS",
+        "series_id": "SOFR",  # 使用SOFR作为序列ID
         "api_key": api_key,
         "file_type": "json",
         "observation_start": date,
@@ -32,5 +32,5 @@ def get_fedfunds_data(date='', api_key='051f69ecb49f2cecf43a9ad162820cd1'):
         return None
     
 #example
-#get_fedfunds_data()
-#get_fedfunds_data('2023-09-10')
+get_sofr_data()
+get_sofr_data("2023-08-17")
