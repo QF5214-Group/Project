@@ -1,0 +1,4 @@
+1  install necessary package
+2  use key file(json) and only read connection to link the cloud sql
+3  try to read the table name to make sure then connection has been established
+4  read data from datebase
