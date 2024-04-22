@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS `dwd`;
 USE `dwd`;
 
 CREATE TABLE IF NOT EXISTS `dwd_news_df` (
-  `news_id` int PRIMARY KEY,
+  `news_id` decimal(11,0) PRIMARY KEY,
   `date` date,
   `news_title` varchar(300) BINARY,
   `news_url` varchar(300) BINARY,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `dwd_market_df` (
 );
 
 CREATE TABLE IF NOT EXISTS `dwd_talk_comments_df` (
-  `talk_comment_id` int PRIMARY KEY,
+  `talk_comment_id` decimal(12,0) PRIMARY KEY,
   `date` date,
   `talk_subject_id` varchar(300) BINARY,
   `talk_user_id` varchar(100) BINARY,
@@ -61,3 +61,4 @@ ALTER TABLE `dwd_talk_subjects_df` ADD FOREIGN KEY (`date`) REFERENCES `dwd_mark
 ALTER TABLE `dwd_talk_comments_df` ADD FOREIGN KEY (`talk_subject_id`) REFERENCES `dwd_talk_subjects_df` (`talk_subject_id`);
 
 ALTER TABLE `dwd_talk_comments_df` ADD FOREIGN KEY (`talk_user_id`) REFERENCES `dwd_talk_users_df` (`talk_user_id`);
+
