@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS `ods`;
 USE `ods`;
 
 CREATE TABLE IF NOT EXISTS `ods_news_delta` (
-  `news_id` int PRIMARY KEY,
+  `news_id` decimal(11,0) PRIMARY KEY,
   `date` date,
   `news_title` varchar(300) BINARY,
   `news_url` varchar(300) BINARY,
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `ods_market_sofr_delta` (
 );
 
 CREATE TABLE IF NOT EXISTS `ods_talk_comments_delta` (
-  `talk_comment_id` int PRIMARY KEY,
+  `talk_comment_id` decimal(12,0) PRIMARY KEY,
   `date` date,
   `talk_subject_id` varchar(300) BINARY,
   `talk_user_id` varchar(100) BINARY,
