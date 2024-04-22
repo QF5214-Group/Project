@@ -36,7 +36,8 @@ CREATE TABLE IF NOT EXISTS `ods_market_cpi_delta` (
 CREATE TABLE IF NOT EXISTS `ods_market_employment_delta` (
   `date` date PRIMARY KEY,
   `employment_nonfarm` int,
-  `population` int
+  `population` int,
+  `employment_nonfarm_ratio` double
 );
 
 CREATE TABLE IF NOT EXISTS `ods_market_ffr_delta` (
